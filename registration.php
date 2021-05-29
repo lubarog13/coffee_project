@@ -14,7 +14,7 @@ Email: <input type="text" name="login"><br>
             $result = $mysqli->query($str);
             if($row = $result->fetch_assoc()) echo "Запись уже существует";
             else{
-            $str = "INSERT INTO users(login, name, password) VALUES ("."'".$_POST['login']."'".", '".$_POST['first_name']."', '".$_POST['password']."')";
+            $str = "INSERT INTO users(login, username, password) VALUES ("."'".$_POST['login']."'".", '".$_POST['first_name']."', '".$_POST['password']."')";
             session_start();
             $mysqli->query($str);
             $_SESSION['login']=$_POST['login'];
