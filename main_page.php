@@ -6,10 +6,10 @@ session_start();
         $str = "SELECT * FROM food";
         $result = $mysqli->query($str);
         while ($row = $result->fetch_assoc()){
-            echo "<div onclick = onclick=".'"window.location.href = '."'http://localhost/rpm_web_project/product.php?idfood=".$row['idfood']."'".
+            echo "<div onclick=".'"window.location.href = '."'http://localhost/rpm_web_project/product.php?idfood=".$row['idfood']."'".'">'.
             "<p><b>".$row['food_name']."</p></b>".
             "<p><img src=images/".$row['photo_link']." width='100' height='150'>".
-            "<p>".$row['cost']."руб.</p>".
+            "<p>".$row['food_price']."руб.</p>".
             "<p>".$row['short_description']."</p></div>";
         }
         $mysqli->close();

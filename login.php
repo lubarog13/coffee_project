@@ -17,6 +17,7 @@ Email: <input type="text" name="login"><br>
                 $_SESSION['login'] = $_POST['login'];
                 $_SESSION['first_name'] = $row['username'];
                 $_SESSION['password'] = $_POST['password'];
+                header("Location: main_page.php");
             }
             else echo "Проверьте email и пароль или зарегестрируйтесь";
         }
