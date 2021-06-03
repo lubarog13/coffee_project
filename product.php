@@ -1,3 +1,9 @@
+<p><a href='http://localhost/rpm_web_project/category.php?category=tea'>Чай</a>
+<a href='http://localhost/rpm_web_project/category.php?category=coffee'>Кофе</a>
+<a href='http://localhost/rpm_web_project/category.php?category=other'>Другое</a>
+<a href = 'http://localhost/rpm_web_project/basket.php'>Корзина</a>
+<a href = 'http://localhost/rpm_web_project/chosen.php'>Избранное</a>
+ </p>
 <?php
     session_start();
     if(isset($_SESSION['login'])){
@@ -10,7 +16,7 @@
             "<p><img src=images/".$row['photo_link']." width='100' height='150'>".
             "<h2>".$row['food_price']."руб.</h2>"."<p>Количество: ".$row['food_count'].
             "<h3>Описание</h3><p>".file_get_contents("C:\\xampp\\htdocs\\rpm_web_project\\documents\\".$row['long_description_link']).
-            "</p><p>Поставщик: ".$row['provider_name']."</p>";
+            "</p><p>Поставщик: ".$row['provider_name']."</p><button onclick=".'"window.location.href = '."'http://localhost/rpm_web_project/insert.php?idfood=".$row['idfood']."&choice=cart'".'">В корзину</button>'."<button onclick=".'"window.location.href = '."'http://localhost/rpm_web_project/insert.php?idfood=".$row['idfood']."&choice=chosen'".'">В избранное</button>';
         }
     }
     else header("Location: login.php");

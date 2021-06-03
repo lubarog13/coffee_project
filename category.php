@@ -6,10 +6,13 @@
  </p>
 
 <?php
+
 session_start();
     if(isset($_SESSION['login'])){
+        if(isset($_GET['category'])){
         $mysqli = new mysqli("localhost", "root", "1234", "rpm_project");
-        $str = "SELECT * FROM food";
+        $str = "SELECT * FROM food where food_type = '".$_GET['category']."'";
+        echo "<h2>".$_GET['category']."</h2>";
         $result = $mysqli->query($str);
         while ($row = $result->fetch_assoc()){
             echo "<div onclick=".'"window.location.href = '."'http://localhost/rpm_web_project/product.php?idfood=".$row['idfood']."'".'">'.
@@ -19,6 +22,8 @@ session_start();
             "<p>".$row['short_description']."</p></div>";
         }
         $mysqli->close();
+    }
+    else header("Location: main_page.php");
     }
     else header("Location: login.php");
 ?>
