@@ -1,8 +1,13 @@
-<p><a href='http://localhost/rpm_web_project/category.php?category=tea'>Чай</a>
+<p>
+<a href='http://localhost/rpm_web_project/main_page.php'>На главную</a>
+<a href='http://localhost/rpm_web_project/category.php?category=tea'>Чай</a>
 <a href='http://localhost/rpm_web_project/category.php?category=coffee'>Кофе</a>
 <a href='http://localhost/rpm_web_project/category.php?category=other'>Другое</a>
 <a href = 'http://localhost/rpm_web_project/basket.php'>Корзина</a>
 <a href = 'http://localhost/rpm_web_project/chosen.php'>Избранное</a>
+<form method="GET" action="main_page.php">
+    Поиск: <input type="text" name='key_world'>
+    <button type="submit">Search</button></form>
  </p>
 <?php
     session_start();
