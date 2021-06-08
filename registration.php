@@ -1,5 +1,5 @@
 <form method="POST">
-Email: <input type="text" name="login"><br>
+Введите имя: <input type="text" name="login"><br>
 Имя: <input type="text", name="first_name"><br>
 Пароль: <input type="text" name="password"><br>
 Повторите пароль: <input type="text" name="password_d"><br>

@@ -25,4 +25,4 @@ session_start();
     }
     else header("Location: login.php");
 ?>
-<button type="button">Заказать</button>
+<button type="button" onclick="window.location.href ='http://localhost/rpm_web_project/order.php'">Заказать</button>
