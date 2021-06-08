@@ -19,7 +19,7 @@ session_start();
             echo "<div onclick=".'"window.location.href = '."'http://localhost/rpm_web_project/product.php?idfood=".$row['idfood']."'".'">'.
             "<p><b>".$row['food_name']."</p></b>".
             "<p><img src=images/".$row['photo_link']." width='100' height='150'>".
-            "<p>".$row['food_price']."руб.</p></div><button type='button' onclick=".'"window.location.href = '."'http://localhost/rpm_web_project/insert.php?idfood=".$row['idfood']."&choice=cart'".'">В корзину</button>';
+            "<p>".$row['food_price']."руб.</p></div><p><button type='button' onclick=".'"window.location.href = '."'http://localhost/rpm_web_project/insert.php?idfood=".$row['idfood']."&choice=cart'".'">В корзину</button>'."<button onclick=".'"window.location.href = '."'http://localhost/rpm_web_project/delete.php?id_goods=".$row['id_goods']."&choice=chosen'".'">Удалить из избранного</button>'."</p>";
         }
         $mysqli->close();
     }
