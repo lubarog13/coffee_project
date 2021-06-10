@@ -1,3 +1,4 @@
+<p><a href='http://localhost/rpm_web_project/profile.php'>Профиль</a></p>
 <p>
 <a href='http://localhost/rpm_web_project/main_page.php'>На главную</a>
 <a href='http://localhost/rpm_web_project/category.php?category=tea'>Чай</a>
@@ -26,7 +27,15 @@ session_start();
     if(isset($_GET['category'])){
         $mysqli = new mysqli("localhost", "root", "1234", "rpm_project");
         $str = "SELECT * FROM food where food_type = '".$_GET['category']."' ".$_GET['sort'];
-        echo "<h2>".$_GET['category']."</h2>";
+        if($_GET['category']=='tea'){
+            echo "<h2>"."Чай"."</h2>";
+        }
+        elseif($_GET['category']=='coffee'){
+            echo "<h2>"."Кофе"."</h2>";
+        }
+        elseif($_GET['category']=='other'){
+            echo "<h2>"."Другое"."</h2>";
+        }
         $result = $mysqli->query($str);
         while ($row = $result->fetch_assoc()){
             echo "<div onclick=".'"window.location.href = '."'http://localhost/rpm_web_project/product.php?idfood=".$row['idfood']."'".'">'.

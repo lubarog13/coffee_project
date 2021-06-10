@@ -1,3 +1,4 @@
+<p><a href='http://localhost/rpm_web_project/profile.php'>Профиль</a></p>
 <p>
 <a href='http://localhost/rpm_web_project/main_page.php'>На главную</a>
 <a href='http://localhost/rpm_web_project/category.php?category=tea'>Чай</a>
